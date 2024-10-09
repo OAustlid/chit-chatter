@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>PechaKucha EDC2024</title>
+	<style>
+        img {
+            position: absolute;
+            top: 25;
+            left: 25;
+        }
+        svg {
+            position: absolute;
+            border: 0;
+            visibility: visible;
+        }
+        .notyetshown {
+            display:none
+        }
+        .havebeenshown {
+            display:none
+        }
+        .current {
+            display:block
+        }
+        .final {
+            display:none
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var millis_per_slide = 2000.0; // no more, no less! (unless you want to, that is...)
+        var millis_per_tick = 19.72; // because why not?
+        var countdowntick = 0.0; // Start with selecting a random slide
+        var tickIsActive = true;
+        //
+        function toggleImg() {
+            var i_cur = document.getElementsByClassName('current');
+            if (i_cur.length==1) { // doesn't run for the very first slide
+                i_cur[0].className="havebeenshown"
+            }
+            var i_nys = document.getElementsByClassName('notyetshown');
+            var i_nys_length = i_nys.length;
+            if (i_nys_length>0) {
+                var rnd_nys = Math.round(0.4999+i_nys_length*Math.random())-1;
+                i_nys[rnd_nys].className="current"
+            }
+            else {
+                tickIsActive=false;
+                ticker = document.getElementById("ticker");
+                ticker.setAttribute('opacity',0.0);
+                var i_final = document.getElementsByClassName("final");
+                if (i_final.length>0) {
+                    i_final[0].className="current";
+                }
+            }
+        }
+        function update_visuals() {
+            ticker = document.getElementById("ticker");
+            cdf = countdowntick/millis_per_slide;
+            ticker_width = 100.0*cdf;
+            ticker.setAttribute('opacity',(1.0-cdf)**4);
+            ticker.setAttribute('width',ticker_width);
+        }
+        function tick() {
+            if(tickIsActive) {
+                update_visuals()
+                countdowntick-=millis_per_tick;
+                if (countdowntick<=0) {
+                    countdowntick = millis_per_slide;
+                    toggleImg()
+                }
+            }
+        }
+        setInterval(tick, millis_per_tick);
+    </script>
+    <img class="notyetshown" title="slide01" src="empty.png"/>
+    <img class="notyetshown" title="slide02" src="empty.png"/>
+    <img class="notyetshown" title="slide03" src="empty.png"/>
+    <img class="notyetshown" title="slide04" src="empty.png"/>
+    <img class="notyetshown" title="slide05" src="empty.png"/>
+    <img class="notyetshown" title="slide06" src="empty.png"/>
+    <img class="notyetshown" title="slide07" src="empty.png"/>
+    <img class="notyetshown" title="slide08" src="empty.png"/>
+    <img class="notyetshown" title="slide09" src="empty.png"/>
+    <img class="notyetshown" title="slide10" src="empty.png"/>
+    <img class="notyetshown" title="slide11" src="empty.png"/>
+    <img class="notyetshown" title="slide12" src="empty.png"/>
+    <img class="notyetshown" title="slide13" src="empty.png"/>
+    <img class="notyetshown" title="slide14" src="empty.png"/>
+    <img class="notyetshown" title="slide15" src="empty.png"/>
+    <img class="notyetshown" title="slide16" src="empty.png"/>
+    <img class="notyetshown" title="slide17" src="empty.png"/>
+    <img class="notyetshown" title="slide18" src="empty.png"/>
+    <img class="notyetshown" title="slide19" src="empty.png"/>
+    <img class="notyetshown" title="slide20" src="empty.png"/>
+    <img class="final" title="End Of Presentation" src="empty.png"/>
+    <svg class="active" width=104 height=20 x=0 y=0>
+        <rect id="ticker" x=2 y=2 width=100 height=8 fill='red' opacity='0.0' />
+    </svg>
+</body>
+</html>
+
