@@ -15,3 +15,5 @@ To use this tool:
 You have 20 seconds (configurable) for each slide.
 
 When there are a few seconds left for a slide, a timer will be displayed in the top left corner.
+
+(Optional) You may set the <img> element with class "final" to a slide that will always be the ending of the presentation. That slide will not have a timeout, nor show a timer.
