@@ -3,12 +3,27 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>PechaKucha EDC2024</title>
+	<title>PechaKucha</title>
 	<style>
-        img {
+        html, body {
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+        div {
             position: absolute;
-            top: 25;
-            left: 25;
+            height: 100%;
+            width: 100%;
+        }
+        div img {
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            max-width:100%;
+            max-height:100%;
         }
         svg {
             position: absolute;
@@ -76,27 +91,36 @@
         }
         setInterval(tick, millis_per_tick);
     </script>
-    <img class="notyetshown" title="slide01" src="empty.png"/>
-    <img class="notyetshown" title="slide02" src="empty.png"/>
-    <img class="notyetshown" title="slide03" src="empty.png"/>
-    <img class="notyetshown" title="slide04" src="empty.png"/>
-    <img class="notyetshown" title="slide05" src="empty.png"/>
-    <img class="notyetshown" title="slide06" src="empty.png"/>
-    <img class="notyetshown" title="slide07" src="empty.png"/>
-    <img class="notyetshown" title="slide08" src="empty.png"/>
-    <img class="notyetshown" title="slide09" src="empty.png"/>
-    <img class="notyetshown" title="slide10" src="empty.png"/>
-    <img class="notyetshown" title="slide11" src="empty.png"/>
-    <img class="notyetshown" title="slide12" src="empty.png"/>
-    <img class="notyetshown" title="slide13" src="empty.png"/>
-    <img class="notyetshown" title="slide14" src="empty.png"/>
-    <img class="notyetshown" title="slide15" src="empty.png"/>
-    <img class="notyetshown" title="slide16" src="empty.png"/>
-    <img class="notyetshown" title="slide17" src="empty.png"/>
-    <img class="notyetshown" title="slide18" src="empty.png"/>
-    <img class="notyetshown" title="slide19" src="empty.png"/>
-    <img class="notyetshown" title="slide20" src="empty.png"/>
-    <img class="final" title="End Of Presentation" src="empty.png"/>
+    <div>
+        <!-- Introductory slides -->
+        <img class="notyetshown" title="slide01" src="empty.png"/>
+        <img class="notyetshown" title="slide02" src="empty.png"/>
+        <img class="notyetshown" title="slide03" src="empty.png"/>
+        <img class="notyetshown" title="slide04" src="empty.png"/>
+        <img class="notyetshown" title="slide05" src="empty.png"/>
+
+        <!-- Main slides -->
+        <img class="notyetshown" title="slide06" src="empty.png"/>
+        <img class="notyetshown" title="slide07" src="empty.png"/>
+        <img class="notyetshown" title="slide08" src="empty.png"/>
+        <img class="notyetshown" title="slide09" src="empty.png"/>
+        <img class="notyetshown" title="slide10" src="empty.png"/>
+        <img class="notyetshown" title="slide11" src="empty.png"/>
+        <img class="notyetshown" title="slide12" src="empty.png"/>
+        <img class="notyetshown" title="slide13" src="empty.png"/>
+        <img class="notyetshown" title="slide14" src="empty.png"/>
+        <img class="notyetshown" title="slide15" src="empty.png"/>
+        
+        <!-- Takeaway slides -->
+        <img class="notyetshown" title="slide16" src="empty.png"/>
+        <img class="notyetshown" title="slide17" src="empty.png"/>
+        <img class="notyetshown" title="slide18" src="empty.png"/>
+        <img class="notyetshown" title="slide19" src="empty.png"/>
+        <img class="notyetshown" title="slide20" src="empty.png"/>
+
+        <!-- End of presentation -->
+        <img class="final" title="End Of Presentation" src="empty.png"/>
+    </div>
     <svg class="active" width=104 height=20 x=0 y=0>
         <rect id="ticker" x=2 y=2 width=100 height=8 fill='red' opacity='0.0' />
     </svg>
