@@ -46,9 +46,10 @@
 </head>
 <body>
     <script>
+        var randomize_slides_sequence = false; // Set to true if you want to randomize slide sequence
         var millis_per_slide = 20000.0; // no more, no less! (unless you want to, that is...)
         var millis_per_tick = 19.72; // because why not?
-        var countdowntick = 0.0; // Start with selecting a random slide
+        var countdowntick = 0.0; // Start immediately. Set to a number of seconds for a small pause before starting.
         var tickIsActive = true;
         //
         function toggleImg() {
@@ -59,8 +60,10 @@
             var i_nys = document.getElementsByClassName('notyetshown');
             var i_nys_length = i_nys.length;
             if (i_nys_length>0) {
-                var rnd_nys = Math.round(0.4999+i_nys_length*Math.random())-1;
-                i_nys[rnd_nys].className="current"
+                var rnd_nys = 0;
+                if (randomize_slides_sequence) {
+                    rnd_nys = Math.round(0.4999+i_nys_length*Math.random())-1;
+                }i_nys[rnd_nys].className="current"
             }
             else {
                 tickIsActive=false;
