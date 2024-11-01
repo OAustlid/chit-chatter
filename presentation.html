@@ -50,7 +50,7 @@
         var millis_per_slide = 20000.0; // no more, no less! (unless you want to, that is...)
         var millis_per_tick = 19.72; // because why not?
         var countdowntick = 0.0; // Start immediately. Set to a number of seconds for a small pause before starting.
-        var tickIsActive = true;
+        var tick_is_active = true;
         //
         function toggleImg() {
             var i_cur = document.getElementsByClassName('current');
@@ -66,7 +66,7 @@
                 }i_nys[rnd_nys].className="current"
             }
             else {
-                tickIsActive=false;
+                tick_is_active=false;
                 ticker = document.getElementById("ticker");
                 ticker.setAttribute('opacity',0.0);
                 var i_final = document.getElementsByClassName("final");
@@ -83,7 +83,7 @@
             ticker.setAttribute('width',ticker_width);
         }
         function tick() {
-            if(tickIsActive) {
+            if(tick_is_active) {
                 update_visuals()
                 countdowntick-=millis_per_tick;
                 if (countdowntick<=0) {
