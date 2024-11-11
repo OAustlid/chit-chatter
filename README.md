@@ -1,6 +1,6 @@
-# pecha-kucha
+# Chit-chat
 
-Simple tool for creating a Pecha Kucha presentation
+Simple tool for creating a Chit-Chat presentation
 
 ## How-to
 
@@ -14,7 +14,7 @@ To use this tool:
 1) *For extra effect, most browsers can be put in fullscreen mode. Consider doing this before clicking "start".*
 1) In the `script` part there are a couple of settings:
  - `randomize_slides_sequence` set to `true` will randomize the sequence of the slides every time you run it, while `false` will preserve the order of the `<img>` elements.
- - `millis_per_slide` should stay at `20000` for a Pecha Kucha, but if you want you can change it.
+ - `millis_per_slide` should stay at `20000` for a Chit-Chat, but if you want you can adjust it.
  - `tick_is_active` is the small red visual indicator in the top left corner when slides are soon to change. Set to `false` to disable it.
  - `countdowntick` can be set to a number of seconds if you like a couple of seconds before the first slide appears.
  - `millis_per_tick` is just how long between checking for updates like a new slide or altering the ticks indicator. Any value between 10 and 100 should work just fine.
